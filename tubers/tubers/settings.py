@@ -28,10 +28,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = 'dashboard'
+
 
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts.apps.AccountsConfig',
     'youtubers.apps.YoutubersConfig',
     'webpages.apps.WebpagesConfig',
     'djangocms_admin_style',
@@ -42,6 +45,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+
 ]
 
 MIDDLEWARE = [
@@ -129,3 +139,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'tubers/static')
 ]
+SITE_ID = 1

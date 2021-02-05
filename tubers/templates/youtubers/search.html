@@ -12,7 +12,7 @@
     </div>
 
     <section class="searchbox container mt-5 p-3 bg-accent">
-      <form>
+      <form method="GET" action="{% url 'search' %}">
         <div class="form-row">
           <div class="form-group col-md-4">
             <select name="city" id="inputState" class="form-control">
@@ -26,7 +26,7 @@
             <select name = "camera_type" id="inputState" class="form-control">
               <option selected disabled hidden>Camera Type</option>
               {% for camera in camera_type_search %}
-              <option value="camera">{{camera}}</option>
+              <option value="{{camera}}">{{camera}}</option>
               {% endfor %}
               
             </select>
